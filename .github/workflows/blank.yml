@@ -35,7 +35,7 @@ jobs:
           exit 1
           
     outputs:
-      test_conclusion: ${{ steps.step2.conclusion }}
+      conclusion: ${{ needs.auto_test.outputs.step2.conclusion }}
         
         
   upload:
@@ -43,5 +43,5 @@ jobs:
     needs: auto_test
     steps:
       - name: Run
-        if: ${{ steps.auto_test.outputs.conclusion }}
+        #if: ${{ steps.auto_test.outputs.conclusion }}
         run: echo RUNNING LAST STAGE! 
