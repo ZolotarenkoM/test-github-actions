@@ -43,5 +43,5 @@ jobs:
     needs: auto_test
     steps:
       - name: Run
-        if: ${{ steps.auto_test.outputs.conclusion == 'success' || steps.auto_test.outputs.conclusion == 'failure' }}
+        if: ${{ steps.auto_test.outputs.conclusion }}
         run: echo RUNNING LAST STAGE! 
