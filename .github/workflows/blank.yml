@@ -25,7 +25,9 @@ jobs:
 
       - name: Run test 1
         id: step1
-        run: echo Hello, world!
+        run: |
+          echo Hello, world!
+          exit 1
 
       - name: Run test 2
         id: step2
