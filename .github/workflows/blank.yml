@@ -29,9 +29,11 @@ jobs:
 
       - name: Run test 2
         id: step2
-        run: exit 1
+        run: |
+          echo hello 
+          exit 1
         continue-on-error: true
 
       - name: Run
-        #if: ${{ needs.step2.result == 'success' || needs.step2.result == 'failure' }}
+        if: ${{ needs.step2.result == 'success' || needs.step2.result == 'failure' }}
         run: echo RUNNING LAST STAGE! 
