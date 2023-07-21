@@ -31,11 +31,6 @@ jobs:
         id: step2
         run: exit 1
 
-      - name: Run test 3
-        id: step3
-        if: ${{ failure() && steps.step2.conclusion == 'failure' }}
-        run: echo ${steps.step2.conclusion}
-
       - name: Run
-        if: ${{ steps.step2.conclusion == 'success' }} || ${{ steps.step2.conclusion == 'failure' }}
+        #if: ${{ steps.step2.conclusion == 'success' }} || ${{ steps.step2.conclusion == 'failure' }}
         run: echo RUNNING LAST STAGE! 
