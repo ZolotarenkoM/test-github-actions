@@ -32,5 +32,5 @@ jobs:
         run: exit 1
 
       - name: Run
-        if: ${{ needs.step2.result == 'success' }} || ${{ needs.step2.result == 'failure' }}
+        if: ${{ needs.step2.result == 'success' || needs.step2.result == 'failure' }}
         run: echo RUNNING LAST STAGE! 
