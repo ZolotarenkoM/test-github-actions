@@ -33,8 +33,7 @@ jobs:
         run: |
           echo hello 
           exit 1
-        continue-on-error: true
-        if: ${{ always() }}
+          
     outputs:
       test_conclusion: ${{ steps.auto_test.outputs.conclusion }}
         
