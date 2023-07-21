@@ -35,5 +35,5 @@ jobs:
         continue-on-error: true
 
       - name: Run
-        if: ${{ needs.step2.result == 'success' || needs.step2.result == 'failure' }}
+        if: ${{ steps.step2.conclusion == 'success' || steps.step2.conclusion == 'failure' }}
         run: echo RUNNING LAST STAGE! 
