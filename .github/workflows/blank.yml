@@ -50,7 +50,7 @@ jobs:
       - name: Check image in Amazon ECR
         id: check-image
         env:
-          IMAGE: "${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:ml-rtmp-server-edge:0.0.1-d382478-master"
+          IMAGE: "${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:0.0.1-d382478-master"
         shell: bash
         run: docker manifest inspect ${{ env.IMAGE }}
 
