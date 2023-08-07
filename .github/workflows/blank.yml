@@ -52,7 +52,11 @@ jobs:
         env:
           IMAGE: "${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:0.0.1-d382478-master"
         shell: bash
-        run: docker manifest inspect ${{ env.IMAGE }}
+        run: |
+          aws ecr describe-images
+          && --registry-id 502545620092 
+          && --repository-name ml-rtmp-server-edge 
+          && --image-ids imageTag=0.0.1-d382478-master
 
       - name: Run test 1
         id: step1
