@@ -47,23 +47,13 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Install AWS CLI
-        shell: bash
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
-
       - name: Check image in Amazon ECR
         id: check-image
         env:
           IMAGE: "${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:0.0.1-d382478-master"
         shell: bash
         run: |
-          aws ecr describe-images
-          && --registry-id 502545620092 
-          && --repository-name ml-rtmp-server-edge 
-          && --image-ids imageTag=0.0.1-d382478-master
+          aws ecr describe-images --registry-id 502545620092 --repository-name ml-rtmp-server-edge  --image-ids imageTag=0.0.1-d382478-master
 
       - name: Run test 1
         id: step1
