@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Install GH CLI
         uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
-        with:
-          gh-cli-version: 2.14.2
 
       - name: blah 
         run: |
