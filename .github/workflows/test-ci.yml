@@ -13,7 +13,7 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   cleanup:
-    runs-on: self-hosted 
+    runs-on: ubuntu-latest
     steps:
       - name: Install GH CLI
         uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
