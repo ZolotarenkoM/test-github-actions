@@ -1,8 +1,6 @@
 name: CI-test
 
-# Controls when the workflow will run
-on:
-  workflow_dispatch:
+workflow_dispatch
 
 env:
   AWS_REGION: eu-central-1
