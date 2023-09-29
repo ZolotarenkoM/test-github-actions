@@ -1,6 +1,7 @@
 name: CI-test
 
-workflow_dispatch
+on:
+  workflow_dispatch:
 
 env:
   AWS_REGION: eu-central-1
