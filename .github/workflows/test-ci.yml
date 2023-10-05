@@ -1,4 +1,4 @@
-name: CI-test
+name: Running AutoTest
 
 on:
   workflow_dispatch:
@@ -9,15 +9,16 @@ env:
   NODE_OPTIONS: '--max_old_space_size=4096'
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run sequentially  or in parallel
 jobs:
-  cleanup:
+  auto-test:
     runs-on: ubuntu-latest
+    environment: development
     steps:
-      - name: Install GH CLI
-        uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
-
-      - name: blah 
+      - name: Run autotest
+        shell: bash
         run: |
-          gh extension install actions/gh-actions-cache
+          env
+          exit 1
+        
       
