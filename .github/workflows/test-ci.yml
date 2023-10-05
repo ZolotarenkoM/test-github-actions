@@ -18,6 +18,7 @@ jobs:
       - name: Run autotest
         shell: bash
         run: |
+          env
           exit 1
         
       
