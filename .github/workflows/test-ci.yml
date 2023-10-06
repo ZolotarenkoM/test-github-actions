@@ -19,6 +19,6 @@ jobs:
         shell: bash
         run: |
           env
-          exit 1
+          exit 0
         
       
