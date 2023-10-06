@@ -1,4 +1,4 @@
-name: Running AutoTest
+name: Running AutoTest Ganesha
 
 on:
   workflow_dispatch:
@@ -19,6 +19,6 @@ jobs:
         shell: bash
         run: |
           env
-          exit 0
+          exit 1
         
       
