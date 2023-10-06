@@ -1,0 +1,22 @@
+name: Running AutoTest STAGE
+
+on:
+  workflow_dispatch:
+
+env:
+  AWS_REGION: eu-central-1
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+# A workflow run is made up of one or more jobs that can run sequentially  or in parallel
+jobs:
+  auto-test:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: Run autotest
+        shell: bash
+        run: |
+          echo STAGE
+          env
+          exit 0
+        
