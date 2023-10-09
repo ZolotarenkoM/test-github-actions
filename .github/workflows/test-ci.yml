@@ -1,6 +1,12 @@
 name: Running AutoTest Ganesha
 
 on:
+  workflow_call:
+    inputs:
+      foo:
+        description: "The reference point"
+        required: true
+        type: string
   workflow_dispatch:
   repository_dispatch:
   workflow_run:
