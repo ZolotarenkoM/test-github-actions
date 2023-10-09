@@ -8,6 +8,11 @@ on:
         required: true
         type: string
   workflow_dispatch:
+    inputs:
+      foo:
+        description: "The reference point"
+        required: true
+        type: string
   repository_dispatch:
   workflow_run:
   
