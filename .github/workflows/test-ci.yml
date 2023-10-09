@@ -2,6 +2,8 @@ name: Running AutoTest Ganesha
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+  
 
 env:
   AWS_REGION: eu-central-1
