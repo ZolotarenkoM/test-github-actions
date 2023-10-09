@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Run autotest
         env:
-          PAYLOAD: ${{ github.event.client_payload.foo }}
+          PAYLOAD: ${{ inputs.foo }}
         shell: bash
         run: |
           env
