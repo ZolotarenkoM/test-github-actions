@@ -3,11 +3,15 @@ name: Running AutoTest Ganesha
 on:
   workflow_dispatch:
     inputs:
-      foo:
-        description: "The reference point"
+      environment:
+        description: "Environment to be passed to job"
         required: true
         type: string
-
+      service_name:
+        description: "The service name"
+        required: true
+        type: string
+        
 env:
   AWS_REGION: eu-central-1
   ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
@@ -22,7 +26,8 @@ jobs:
     steps:
       - name: Run autotest
         env:
-          PAYLOAD: ${{ inputs.foo }}
+          environment: ${{ inputs.environment }}
+          service_name: ${{ inputs.service_name }}
         shell: bash
         run: |
           env
